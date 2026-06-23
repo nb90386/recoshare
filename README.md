@@ -1,73 +1,68 @@
-# React + TypeScript + Vite
+# Recoshare — Recommendations for the moments you cannot decide.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+[![Vercel](https://img.shields.io/badge/deployed%20with-vercel-black)](https://vercel.com)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5.6-blue)]()
+[![React](https://img.shields.io/badge/React-18-61DAFB)]()
+[![Vite](https://img.shields.io/badge/Vite-6-646CFF)]()
 
-Currently, two official plugins are available:
+A beautiful social recommendation app for people who are undecided, bored, or looking for something new.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## ✨ Features
 
-## React Compiler
+- **Get Recommendations** — Enter your mood, time, budget, and context to get personalized suggestions
+- **Browse** — Discover 80+ curated recommendations across 15 categories
+- **Share** — Post your own recommendations for others
+- **Save & Like** — Bookmark favorites and show appreciation
+- **Beautiful UI** — Glass morphism, Framer Motion animations, warm color palette
+- **Mobile-first** — Fully responsive design
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## 🚀 Deploy
 
-## Expanding the ESLint configuration
+### One-click deploy to Vercel:
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/nb90386/recoshare)
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+### Manual deploy:
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+1. Go to [vercel.com](https://vercel.com) → Sign up with GitHub
+2. Click "Add New" → "Project"
+3. Import `nb90386/recoshare` from GitHub
+4. Framework: Vite (auto-detected)
+5. Click "Deploy"
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+## 🛠️ Tech Stack
+
+- **Frontend**: React 18 + TypeScript + Vite
+- **Styling**: Tailwind CSS v4
+- **Animation**: Framer Motion
+- **Routing**: React Router v6
+- **Icons**: Lucide React
+- **Deployment**: Vercel
+
+## 📁 Project Structure
+
+```
+src/
+├── components/     # Layout, shared components
+├── pages/          # Home, Recommend, Browse, Detail, Share, Saved
+├── lib/            # Recommender engine, seed data, store
+├── types/          # TypeScript types
+└── assets/         # Static assets
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## 🧪 Recommendation Engine
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+The app uses a rule-based scoring engine that matches recommendations based on:
+- Mood compatibility
+- Category match
+- Budget fit
+- Time availability
+- Social context
+- Energy level
+- Interest tags
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+Scoring is weighted and includes randomization for variety.
+
+## 📄 License
+
+MIT
